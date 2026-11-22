@@ -6,6 +6,7 @@
 <title>Ficha de Avaliação — Painel Empreenda Senac 19ª Edição</title>
 <style>
 :root{
+  --team:#1D2B4F;
   --bg:#f4f5f7; --card:#fff; --ink:#15181d; --mut:#5d646e; --line:#dfe3e8;
   --brand:#0a4a8f; --warn:#8a5a00; --warn-bg:#fff6e0; --err:#9b2415; --err-bg:#fdecea;
   --ok:#0b6b3a; --ok-bg:#e8f6ee; --shadow:0 1px 3px rgba(0,0,0,.07),0 8px 24px rgba(0,0,0,.05);
@@ -16,10 +17,10 @@ body{background:var(--bg);color:var(--ink);
   font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   padding-bottom:7.5rem}
 .wrap{max-width:760px;margin:0 auto;padding:1rem}
-header{background:var(--brand);color:#fff;padding:.85rem 0}
+header{background:#1D2B4F;color:#fff;padding:1rem 0 .95rem}
 header .wrap{padding:0 1rem}
-header h1{margin:0;font-size:.95rem;font-weight:700}
-header p{margin:.15rem 0 0;font-size:.78rem;opacity:.85}
+header h1{margin:0;font-size:.82rem;font-weight:600;opacity:.85;letter-spacing:.01em}
+header p{margin:.22rem 0 0;font-size:1.22rem;font-weight:800;line-height:1.2}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem;margin:1rem 0;box-shadow:var(--shadow)}
 h2{font-size:1.05rem;margin:0 0 .25rem}
 .lede{color:var(--mut);font-size:.875rem;margin:.1rem 0 0}
@@ -27,14 +28,18 @@ label{display:block;font-size:.8rem;font-weight:600;color:var(--mut);margin:.9re
 select,input[type=text]{width:100%;padding:.7rem .75rem;font-size:1rem;font-family:inherit;color:var(--ink);
   border:1px solid var(--line);border-radius:9px;background:#fff;appearance:none}
 .hint{font-size:.78rem;color:var(--mut);margin:.4rem 0 0}
-.team-banner{background:var(--brand);color:#fff;border-radius:12px;padding:.9rem 1rem;margin:1rem 0}
+.team-banner{background:var(--team);color:#fff;border-radius:12px;padding:.9rem 1rem;margin:1rem 0}
+.dots{display:flex;gap:.32rem;margin:.65rem 0 0}
+.dots i{flex:1;height:5px;border-radius:3px;background:rgba(255,255,255,.32)}
+.dots i.on{background:#fff}
+.dots i.done{background:rgba(255,255,255,.7)}
 .team-banner .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;opacity:.8}
 .team-banner .n{font-size:1.3rem;font-weight:800;line-height:1.2;margin:.15rem 0 0}
 .team-banner .h{font-size:.82rem;opacity:.85;margin:.15rem 0 0}
 .crit{border-top:1px solid var(--line);padding:.95rem 0 .55rem}
 .crit:first-of-type{border-top:0;padding-top:.2rem}
 .crit-top{display:flex;gap:.5rem;align-items:baseline}
-.crit-num{flex:0 0 1.45rem;height:1.45rem;border-radius:50%;background:var(--brand);color:#fff;
+.crit-num{flex:0 0 1.45rem;height:1.45rem;border-radius:50%;background:var(--team);color:#fff;
   font-size:.72rem;font-weight:700;display:grid;place-items:center;margin-top:.15rem}
 .crit-t{font-weight:700;font-size:.98rem;line-height:1.3}
 .crit-w{font-weight:400;color:var(--mut);font-size:.84rem}
@@ -42,7 +47,7 @@ select,input[type=text]{width:100%;padding:.7rem .75rem;font-size:1rem;font-fami
 .scale{display:grid;grid-template-columns:repeat(6,1fr);gap:.35rem;padding-left:1.95rem}
 .scale button{padding:.72rem 0;font-size:1.05rem;font-weight:700;font-family:inherit;
   border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:9px;cursor:pointer}
-.scale button[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:#fff}
+.scale button[aria-pressed=true]{background:var(--team);border-color:var(--team);color:#fff}
 .scale .zero{color:var(--mut)}
 .legend{display:flex;justify-content:space-between;font-size:.72rem;color:var(--mut);margin:.35rem 0 0;padding-left:1.95rem}
 .bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);
@@ -73,6 +78,8 @@ tfoot td{font-weight:700;background:#f8f9fb}
 .rows .sc{font-weight:800;font-variant-numeric:tabular-nums;font-size:1rem}
 .rows .ed{font-size:.8rem;font-weight:700;color:var(--brand);background:none;border:0;font-family:inherit;cursor:pointer;padding:.3rem}
 .miss{color:var(--err);font-weight:700}
+.crit.falta{background:var(--err-bg);border-radius:9px;margin:.5rem -.5rem;padding:.7rem .5rem .55rem}
+.crit.falta .crit-t{color:var(--err)}
 .sv{font-size:.76rem;margin:.5rem 0 0}
 .sv.go{color:var(--mut)} .sv.okk{color:var(--ok)} .sv.bad{color:var(--err);font-weight:600}
 pre{white-space:pre-wrap;font-size:.8rem;background:#f8f9fb;border:1px solid var(--line);border-radius:9px;padding:.7rem;margin:0}
@@ -82,7 +89,7 @@ code{background:#eceff3;padding:.1rem .3rem;border-radius:4px;font-size:.85em}
 </head>
 <body>
 <header><div class="wrap">
-  <h1>Painel de Apresentações — Empreenda Senac 19ª Edição</h1>
+  <h1>Painel de Apresentações · Empreenda Senac 19ª Edição</h1>
   <p id="sub">Ficha de avaliação</p>
 </div></header>
 <div class="wrap" id="app"></div>
@@ -98,6 +105,12 @@ code{background:#eceff3;padding:.1rem .3rem;border-radius:4px;font-size:.85em}
    ========================================================================= */
 const ENDPOINT = "https://script.google.com/macros/s/AKfycbzBF1DpfNUVcjSD4nLICtPhRDmQ_9Sr5eCNYc7YD8OYGkAwK0Tf6ucSMm8jKE_BAw7m9Q/exec";
 const HORARIOS = ["15h00","15h25","15h50","16h15","16h40"];
+/* Uma cor por equipe, na ordem de apresenta\u00e7\u00e3o. As tr\u00eas primeiras s\u00e3o as cores
+   do design system do Empreenda (navy, teal e pink), ajustadas para contraste
+   com texto branco. Trocar aqui muda a paleta inteira. */
+const CORES = ["#1D2B4F","#1F7E73","#C62B5C","#4A3A82","#9C4A17"];
+const COR_BASE = "#1D2B4F";
+function pintaTema(cor){ document.documentElement.style.setProperty("--team", cor || COR_BASE); }
 const CATEGORIAS = {
   programas: { nome:"Programas", equipes:["As Naras","Diet Assistance","RVA (Remaking Vintage Archives)","Vertex","VIVÊNCIAS"] },
   medio:     { nome:"Ensino Médio Técnico", equipes:["Defined SOS","Koda","Oryon","Projeto Neurocare","Três ao quadrado"] },
@@ -230,8 +243,9 @@ function render(){
 }
 
 function telaCategoria(){
+  pintaTema(COR_BASE);
   app.innerHTML='<div class="card"><h2>Selecione a categoria</h2>'
-    +'<p class="lede"></p>'
+    +'<p class="lede">Normalmente a categoria já vem no link enviado pela Comissão Organizadora.</p>'
     +'<label for="cs">Categoria</label><select id="cs"><option value="">Selecione…</option>'
     +Object.keys(CATEGORIAS).map(k=>'<option value="'+k+'">'+esc(CATEGORIAS[k].nome)+'</option>').join("")
     +'</select></div>';
@@ -243,6 +257,7 @@ function telaCategoria(){
 }
 
 function telaIdent(){
+  pintaTema(COR_BASE);
   app.innerHTML='<div class="card"><h2>Categoria '+esc(CAT.nome)+'</h2>'
     +'<p class="lede">'+N_EQ+' equipes · 6 critérios por equipe · escala de 0 a 5</p>'
     +'<label for="nm">Seu nome</label>'
@@ -269,21 +284,38 @@ function telaIdent(){
   };
 }
 
-function telaEquipe(i){
+function telaEquipe(i, destacar){
+  pintaTema(CORES[i]);
+  const faltando = CRITERIOS.map((c,k)=>nota(i,c.id)===undefined?k+1:0).filter(x=>x);
+
   const blocos = CRITERIOS.map((c,k)=>{
     const atual = nota(i,c.id);
+    const falta = destacar && atual===undefined;
     const btns=[0,1,2,3,4,5].map(v=>'<button type="button" class="'+(v===0?'zero':'')
       +'" data-c="'+c.id+'" data-v="'+v+'" aria-pressed="'+(atual===v?'true':'false')+'">'+v+'</button>').join("");
-    return '<div class="crit"><div class="crit-top"><span class="crit-num">'+(k+1)+'</span>'
+    return '<div class="crit'+(falta?' falta':'')+'" id="crit'+k+'"><div class="crit-top"><span class="crit-num">'+(k+1)+'</span>'
       +'<span class="crit-t">'+esc(c.titulo)+' <span class="crit-w">('+c.peso+'%)</span></span></div>'
       +'<p class="crit-d">'+esc(c.desc)+'</p><div class="scale">'+btns+'</div>'
-      +'<div class="legend"><span>0 = sem informação</span><span>1 discordo · 5 concordo</span></div></div>';
+      +'<div class="legend"><span>0 = sem informa\u00e7\u00e3o</span><span>1 discordo \u00b7 5 concordo</span></div></div>';
   }).join("");
+
+  const dots = '<div class="dots">'+CAT.equipes.map((n,k)=>
+    '<i class="'+(k===i?'on':(preenchidasEquipe(k)===N_CRIT?'done':''))+'"></i>').join("")+'</div>';
+
+  const aviso = (destacar && faltando.length)
+    ? '<div class="note err" style="margin:0 0 .9rem"><strong>'
+      +(faltando.length>1
+         ? 'Faltam pontuar os crit\u00e9rios '+faltando.slice(0,-1).join(", ")+' e '+faltando[faltando.length-1]
+         : 'Falta pontuar o crit\u00e9rio '+faltando[0])
+      +'.</strong> '
+      +'Todos os seis s\u00e3o obrigat\u00f3rios para avan\u00e7ar. Se a equipe n\u00e3o deu informa\u00e7\u00e3o sobre algum item, '
+      +'a nota correspondente \u00e9 <strong>0</strong> \u2014 ela existe exatamente para esse caso.</div>'
+    : '';
 
   app.innerHTML='<div class="team-banner"><div class="k">Equipe '+(i+1)+' de '+N_EQ+'</div>'
     +'<div class="n">'+esc(CAT.equipes[i])+'</div>'
-    +'<div class="h">Apresentação '+(HORARIOS[i]||"")+'</div></div>'
-    +'<div class="card">'+blocos+'<div class="sv go" id="sv"></div></div>';
+    +'<div class="h">Apresenta\u00e7\u00e3o '+(HORARIOS[i]||"")+'</div>'+dots+'</div>'
+    +aviso+'<div class="card">'+blocos+'<div class="sv go" id="sv"></div></div>';
 
   app.querySelectorAll(".scale button").forEach(b=>{
     b.onclick=()=>{
@@ -293,14 +325,23 @@ function telaEquipe(i){
       if(estado[i]==="salvo") estado[i]="pend";
       b.parentElement.querySelectorAll("button").forEach(x=>
         x.setAttribute("aria-pressed",(+x.dataset.v===notas[i][cid])?"true":"false"));
+      const bloco=b.closest(".crit");
+      if(bloco && notas[i][cid]!==undefined) bloco.classList.remove("falta");
       salvaLocal(); pintaBarra(); pintaSalvamento();
     };
   });
+
   elBack.style.visibility="visible";
-  elNext.textContent = (i===N_EQ-1) ? "Salvar e revisar" : "Salvar e avançar";
+  elNext.textContent = (i===N_EQ-1) ? "Salvar e revisar" : "Salvar e avan\u00e7ar";
   elNext.disabled=false;
   elNext.onclick=async ()=>{
-    elNext.disabled=true; elNext.textContent="Salvando…";
+    if(preenchidasEquipe(i) < N_CRIT){
+      telaEquipe(i, true);
+      const alvo = app.querySelector(".crit.falta");
+      if(alvo) alvo.scrollIntoView({behavior:"smooth",block:"center"});
+      return;
+    }
+    elNext.disabled=true; elNext.textContent="Salvando\u2026";
     await enviaEquipe(i,false);
     step++; render();
   };
@@ -318,6 +359,7 @@ function pintaSalvamento(){
 }
 
 function telaRevisao(){
+  pintaTema(COR_BASE);
   const ths=CAT.equipes.map((n,i)=>'<th>'+(i+1)+'</th>').join("");
   const rows=CRITERIOS.map(c=>'<tr><td>'+esc(c.titulo)+' <span style="color:var(--mut)">('+c.peso+'%)</span></td>'
     +CAT.equipes.map((n,i)=>{const v=nota(i,c.id);return '<td>'+(v===undefined?'<span class="miss">—</span>':v)+'</td>';}).join("")
@@ -335,7 +377,7 @@ function telaRevisao(){
   const lista='<ul class="rows">'+CAT.equipes.map((n,i)=>{
     const f=N_CRIT-preenchidasEquipe(i), m=media(i);
     const st = estado[i]==="salvo" ? "✓ registrado" : (estado[i]==="erro" ? "⚠ não registrado" : "pendente");
-    return '<li><span class="pos">'+(i+1)+'</span><span class="nm">'+esc(n)
+    return '<li><span class="pos" style="background:'+CORES[i]+';color:#fff">'+(i+1)+'</span><span class="nm">'+esc(n)
       +'<small>'+(HORARIOS[i]||"")+' · '+(f>0?('<span class="miss">faltam '+f+'</span>'):st)+'</small></span>'
       +'<span class="sc">'+(m.completo?m.valor.toFixed(2):'—')+'</span>'
       +'<button class="ed" data-i="'+i+'" type="button">Editar</button></li>';}).join("")+'</ul>';
@@ -375,38 +417,43 @@ function telaRevisao(){
   elProg.textContent = falt>0 ? (falt+" nota(s) em falta") : "Pronto para concluir";
 }
 
-function resumoTexto(){
-  let t="EMPREENDA SENAC 19 - PAINEL FINAL\nCategoria: "+CAT.nome+"\nAvaliador: "+chaveNome(avaliador)+"\n";
-  CAT.equipes.forEach((n,i)=>{
-    t+="\n"+(i+1)+". "+n+(HORARIOS[i]?" ["+HORARIOS[i]+"]":"")+"\n";
-    CRITERIOS.forEach((c,k)=>{ const v=nota(i,c.id); t+="  C"+(k+1)+" ("+c.peso+"%): "+(v===undefined?"-":v)+"\n"; });
-    const m=media(i); t+="  MEDIA: "+(m.completo?m.valor.toFixed(2):"incompleto")+"\n";
-  });
-  return t;
+function quadroHTML(){
+  const ths=CAT.equipes.map((n,i)=>'<th style="background:'+CORES[i]+';color:#fff">'+(i+1)+'</th>').join("");
+  const rows=CRITERIOS.map((c,k)=>'<tr><td>'+(k+1)+'. '+esc(c.titulo)+' <span style="color:var(--mut)">('+c.peso+'%)</span></td>'
+    +CAT.equipes.map((n,i)=>{const v=nota(i,c.id);return '<td>'+(v===undefined?'<span class="miss">\u2014</span>':v)+'</td>';}).join("")
+    +'</tr>').join("");
+  const tot=CAT.equipes.map((n,i)=>{const m=media(i);
+    return '<td>'+(m.completo?m.valor.toFixed(2):'<span class="miss">\u2014</span>')+'</td>';}).join("");
+  return '<div style="overflow-x:auto"><table><thead><tr><th>Crit\u00e9rio</th>'+ths+'</tr></thead>'
+    +'<tbody>'+rows+'</tbody><tfoot><tr><td>M\u00e9dia ponderada (0\u20135)</td>'+tot+'</tr></tfoot></table></div>';
+}
+
+function rankingHTML(){
+  const ord=CAT.equipes.map((n,i)=>({n,i,...media(i)})).filter(x=>x.completo).sort((a,b)=>b.valor-a.valor);
+  if(!ord.length) return '<p class="hint">O ranking aparece quando todas as notas estiverem preenchidas.</p>';
+  return '<ul class="rows">'+ord.map((x,k)=>'<li><span class="pos" style="background:'+CORES[x.i]+';color:#fff">'
+    +(k+1)+'\u00ba</span><span class="nm">'+esc(x.n)+'<small>'+(HORARIOS[x.i]||"")+'</small></span>'
+    +'<span class="sc">'+x.valor.toFixed(2)+'</span></li>').join("")+'</ul>';
 }
 
 function telaFim(){
-  const txt=resumoTexto();
+  pintaTema(COR_BASE);
   const falhou = Object.keys(estado).some(k=>estado[k]!=="salvo");
   app.innerHTML='<div class="card">'
     +(falhou
-      ? '<div class="note err"><strong>Parte das notas não foi registrada automaticamente.</strong> '
-       +'Entregue a ficha de papel à Comissão Organizadora e, se puder, envie também o resumo abaixo. '
-       +'Não feche esta aba antes disso.</div>'
-      : '<div class="note ok"><strong>Avaliação concluída e registrada.</strong> '
-       +'Entregue também a ficha de papel à Comissão Organizadora — ela é o documento de conferência.</div>')
-    +'<p class="lede" style="margin-top:.8rem">'+esc(CAT.nome)+' · '+esc(chaveNome(avaliador))+'</p></div>'
-    +'<div class="card"><h2>Resumo das suas notas</h2>'
-    +'<p class="lede">Registro adicional, opcional. Se quiser guardar ou enviar uma cópia, use os botões abaixo.</p>'
-    +'<pre style="margin-top:.7rem">'+esc(txt)+'</pre>'
-    +'<button class="btn block" id="cp" type="button">Copiar resumo</button>'
-    +'<a class="btn ghost block" target="_blank" rel="noopener" href="https://wa.me/?text='
-    + encodeURIComponent(txt).replace(/'/g,"%27")+'">Enviar por WhatsApp</a></div>';
-  const cp=document.getElementById("cp");
-  cp.onclick=async ()=>{ try{ await navigator.clipboard.writeText(txt); cp.textContent="Copiado"; }
-    catch(e){ cp.textContent="Selecione o texto acima e copie"; } };
+      ? '<div class="note err"><strong>Parte das notas n\u00e3o foi registrada.</strong> '
+       +'<strong>N\u00e3o feche esta aba.</strong> Procure a Comiss\u00e3o Organizadora na sala e mostre esta tela \u2014 '
+       +'suas notas est\u00e3o todas aqui. Entregue tamb\u00e9m a ficha de papel.</div>'
+      : '<div class="note ok"><strong>Avalia\u00e7\u00e3o conclu\u00edda e registrada.</strong> '
+       +'Entregue a ficha de papel \u00e0 Comiss\u00e3o Organizadora \u2014 ela \u00e9 o documento de confer\u00eancia.</div>')
+    +'<p class="lede" style="margin-top:.8rem">Categoria '+esc(CAT.nome)+' \u00b7 '+esc(chaveNome(avaliador))+'</p></div>'
+    +'<div class="card"><h2>Suas notas</h2>'
+    +'<p class="lede">Quadro final, apenas para confer\u00eancia. Colunas na ordem de apresenta\u00e7\u00e3o.</p>'
+    +'<div style="margin-top:.8rem">'+quadroHTML()+'</div>'
+    +'<p class="hint">'+CAT.equipes.map((n,i)=>(i+1)+'. '+n).join(" \u00b7 ")+'</p></div>'
+    +'<div class="card"><h2>Ranking resultante</h2>'+rankingHTML()+'</div>';
   elBack.style.visibility="hidden"; elNext.style.visibility="hidden";
-  elProg.textContent = falhou ? "Envie o resumo à Comissão" : "Concluída";
+  elProg.textContent = falhou ? "Procure a Comiss\u00e3o Organizadora" : "Conclu\u00edda";
 }
 
 function pintaBarra(){
