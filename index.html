@@ -231,7 +231,7 @@ function render(){
 
 function telaCategoria(){
   app.innerHTML='<div class="card"><h2>Selecione a categoria</h2>'
-    +'<p class="lede">Normalmente a categoria já vem no link enviado pela Comissão Organizadora.</p>'
+    +'<p class="lede"></p>'
     +'<label for="cs">Categoria</label><select id="cs"><option value="">Selecione…</option>'
     +Object.keys(CATEGORIAS).map(k=>'<option value="'+k+'">'+esc(CATEGORIAS[k].nome)+'</option>').join("")
     +'</select></div>';
