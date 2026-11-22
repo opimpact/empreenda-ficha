@@ -2,91 +2,90 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ficha de Avaliação — Painel Empreenda Senac 19ª Edição</title>
 <style>
 :root{
   --bg:#f4f5f7; --card:#fff; --ink:#15181d; --mut:#5d646e; --line:#dfe3e8;
-  --brand:#0a4a8f; --brand-ink:#fff; --warn:#8a5a00; --warn-bg:#fff6e0;
+  --brand:#0a4a8f; --warn:#8a5a00; --warn-bg:#fff6e0; --err:#9b2415; --err-bg:#fdecea;
   --ok:#0b6b3a; --ok-bg:#e8f6ee; --shadow:0 1px 3px rgba(0,0,0,.07),0 8px 24px rgba(0,0,0,.05);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0}
-body{
-  background:var(--bg);color:var(--ink);
+body{background:var(--bg);color:var(--ink);
   font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  padding-bottom:7.5rem;
-}
+  padding-bottom:7.5rem}
 .wrap{max-width:760px;margin:0 auto;padding:1rem}
-header{background:var(--brand);color:var(--brand-ink);padding:1rem 0 .9rem}
+header{background:var(--brand);color:#fff;padding:.85rem 0}
 header .wrap{padding:0 1rem}
-header h1{margin:0;font-size:1rem;font-weight:700;letter-spacing:.01em}
-header p{margin:.2rem 0 0;font-size:.8rem;opacity:.85}
+header h1{margin:0;font-size:.95rem;font-weight:700}
+header p{margin:.15rem 0 0;font-size:.78rem;opacity:.85}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem;margin:1rem 0;box-shadow:var(--shadow)}
 h2{font-size:1.05rem;margin:0 0 .25rem}
 .lede{color:var(--mut);font-size:.875rem;margin:.1rem 0 0}
 label{display:block;font-size:.8rem;font-weight:600;color:var(--mut);margin:.9rem 0 .3rem;text-transform:uppercase;letter-spacing:.04em}
-select,input[type=text],textarea{
-  width:100%;padding:.7rem .75rem;font-size:1rem;font-family:inherit;color:var(--ink);
-  border:1px solid var(--line);border-radius:9px;background:#fff;appearance:none
-}
-textarea{min-height:4.5rem;resize:vertical}
+select,input[type=text]{width:100%;padding:.7rem .75rem;font-size:1rem;font-family:inherit;color:var(--ink);
+  border:1px solid var(--line);border-radius:9px;background:#fff;appearance:none}
 .hint{font-size:.78rem;color:var(--mut);margin:.4rem 0 0}
-.crit-kicker{font-size:.74rem;font-weight:700;color:var(--brand);letter-spacing:.06em;text-transform:uppercase}
-.crit-title{font-size:1.15rem;font-weight:700;margin:.15rem 0 .35rem;line-height:1.25}
-.crit-desc{font-size:.9rem;color:var(--mut);margin:0}
-.team{border-top:1px solid var(--line);padding:.85rem 0 .4rem}
-.team:first-of-type{border-top:0}
-.team-head{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.5rem}
-.ord{flex:0 0 1.5rem;height:1.5rem;border-radius:50%;background:#eceff3;color:var(--mut);
-  font-size:.75rem;font-weight:700;display:grid;place-items:center}
-.team-name{font-weight:600;font-size:.98rem;line-height:1.25}
-.scale{display:grid;grid-template-columns:repeat(6,1fr);gap:.35rem}
-.scale button{
-  padding:.7rem 0;font-size:1.05rem;font-weight:700;font-family:inherit;
-  border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:9px;cursor:pointer
-}
+.team-banner{background:var(--brand);color:#fff;border-radius:12px;padding:.9rem 1rem;margin:1rem 0}
+.team-banner .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;opacity:.8}
+.team-banner .n{font-size:1.3rem;font-weight:800;line-height:1.2;margin:.15rem 0 0}
+.team-banner .h{font-size:.82rem;opacity:.85;margin:.15rem 0 0}
+.crit{border-top:1px solid var(--line);padding:.95rem 0 .55rem}
+.crit:first-of-type{border-top:0;padding-top:.2rem}
+.crit-top{display:flex;gap:.5rem;align-items:baseline}
+.crit-num{flex:0 0 1.45rem;height:1.45rem;border-radius:50%;background:var(--brand);color:#fff;
+  font-size:.72rem;font-weight:700;display:grid;place-items:center;margin-top:.15rem}
+.crit-t{font-weight:700;font-size:.98rem;line-height:1.3}
+.crit-w{font-weight:400;color:var(--mut);font-size:.84rem}
+.crit-d{font-size:.82rem;color:var(--mut);margin:.3rem 0 .55rem;padding-left:1.95rem}
+.scale{display:grid;grid-template-columns:repeat(6,1fr);gap:.35rem;padding-left:1.95rem}
+.scale button{padding:.72rem 0;font-size:1.05rem;font-weight:700;font-family:inherit;
+  border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:9px;cursor:pointer}
 .scale button[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:#fff}
-.scale .zero{color:var(--mut);font-weight:600}
-.scale-legend{display:flex;justify-content:space-between;font-size:.72rem;color:var(--mut);margin:.3rem 0 0}
+.scale .zero{color:var(--mut)}
+.legend{display:flex;justify-content:space-between;font-size:.72rem;color:var(--mut);margin:.35rem 0 0;padding-left:1.95rem}
 .bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);
-  padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));box-shadow:0 -4px 16px rgba(0,0,0,.06)}
+  padding:.65rem 1rem;box-shadow:0 -4px 16px rgba(0,0,0,.06)}
 .bar .wrap{display:flex;gap:.6rem;align-items:center;padding:0;max-width:760px}
-.bar .prog{flex:1;font-size:.78rem;color:var(--mut)}
-.btn{padding:.8rem 1.15rem;font-size:.95rem;font-weight:700;font-family:inherit;border-radius:9px;
-  border:1px solid var(--brand);background:var(--brand);color:#fff;cursor:pointer}
+.bar .prog{flex:1;font-size:.76rem;color:var(--mut);line-height:1.25}
+.btn{padding:.8rem 1.1rem;font-size:.93rem;font-weight:700;font-family:inherit;border-radius:9px;
+  border:1px solid var(--brand);background:var(--brand);color:#fff;cursor:pointer;white-space:nowrap}
 .btn[disabled]{opacity:.45;cursor:not-allowed}
 .btn.ghost{background:#fff;color:var(--brand)}
-table{width:100%;border-collapse:collapse;font-size:.82rem}
-th,td{border:1px solid var(--line);padding:.4rem .3rem;text-align:center}
-th:first-child,td:first-child{text-align:left;font-size:.78rem}
-thead th{background:#eceff3;font-size:.72rem;font-weight:700}
+.btn.block{display:block;width:100%;text-align:center;text-decoration:none;margin-top:.55rem}
+table{width:100%;border-collapse:collapse;font-size:.8rem}
+th,td{border:1px solid var(--line);padding:.4rem .25rem;text-align:center}
+th:first-child,td:first-child{text-align:left;font-size:.76rem}
+thead th{background:#eceff3;font-size:.72rem}
 tfoot td{font-weight:700;background:#f8f9fb}
-.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.note{border-radius:9px;padding:.75rem .85rem;font-size:.85rem;margin:.9rem 0 0}
+.note{border-radius:9px;padding:.7rem .8rem;font-size:.84rem;margin:.85rem 0 0}
 .note.warn{background:var(--warn-bg);color:var(--warn);border:1px solid #f0dca8}
+.note.err{background:var(--err-bg);color:var(--err);border:1px solid #f3c4bd}
 .note.ok{background:var(--ok-bg);color:var(--ok);border:1px solid #bfe3cd}
-.rank{list-style:none;padding:0;margin:.5rem 0 0}
-.rank li{display:flex;justify-content:space-between;gap:.5rem;padding:.45rem 0;border-top:1px solid var(--line);font-size:.9rem}
-.rank li:first-child{border-top:0}
-.rank .pos{font-weight:700;color:var(--brand);flex:0 0 1.6rem}
-.rank .nm{flex:1}
-.rank .sc{font-weight:700;font-variant-numeric:tabular-nums}
-.missing{color:#a3281f;font-weight:600}
+.rows{list-style:none;padding:0;margin:.3rem 0 0}
+.rows li{display:flex;align-items:center;gap:.6rem;padding:.6rem 0;border-top:1px solid var(--line)}
+.rows li:first-child{border-top:0}
+.rows .pos{flex:0 0 1.5rem;height:1.5rem;border-radius:50%;background:#eceff3;color:var(--mut);
+  font-size:.74rem;font-weight:700;display:grid;place-items:center}
+.rows .nm{flex:1;font-size:.9rem;line-height:1.25}
+.rows .nm small{display:block;color:var(--mut);font-size:.76rem}
+.rows .sc{font-weight:800;font-variant-numeric:tabular-nums;font-size:1rem}
+.rows .ed{font-size:.8rem;font-weight:700;color:var(--brand);background:none;border:0;font-family:inherit;cursor:pointer;padding:.3rem}
+.miss{color:var(--err);font-weight:700}
+.sv{font-size:.76rem;margin:.5rem 0 0}
+.sv.go{color:var(--mut)} .sv.okk{color:var(--ok)} .sv.bad{color:var(--err);font-weight:600}
+pre{white-space:pre-wrap;font-size:.8rem;background:#f8f9fb;border:1px solid var(--line);border-radius:9px;padding:.7rem;margin:0}
 .center{text-align:center}
-.big{font-size:2rem;font-weight:800;margin:.4rem 0}
 code{background:#eceff3;padding:.1rem .3rem;border-radius:4px;font-size:.85em}
-@media(min-width:720px){ .scale button{padding:.6rem 0} }
 </style>
 </head>
 <body>
 <header><div class="wrap">
   <h1>Painel de Apresentações — Empreenda Senac 19ª Edição</h1>
-  <p id="hdr-sub">Ficha de avaliação</p>
+  <p id="sub">Ficha de avaliação</p>
 </div></header>
-
 <div class="wrap" id="app"></div>
-
 <div class="bar"><div class="wrap">
   <button class="btn ghost" id="back" type="button">Voltar</button>
   <span class="prog" id="prog"></span>
@@ -94,47 +93,18 @@ code{background:#eceff3;padding:.1rem .3rem;border-radius:4px;font-size:.85em}
 </div></div>
 
 <script>
-/* ==========================================================================
-   CONFIGURAÇÃO — editar apenas este bloco
-   ==========================================================================
-   endpoint : URL do Apps Script publicado (/exec). Vazio = modo rascunho,
-              sem envio automático; o avaliador copia o resultado.
-   categorias: a chave é usada no link, ex. .../?cat=graduacao
-   equipes  : NA ORDEM DE APRESENTAÇÃO
-   ========================================================================== */
+/* =========================================================================
+   CONFIGURAÇÃO
+   ========================================================================= */
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbzBF1DpfNUVcjSD4nLICtPhRDmQ_9Sr5eCNYc7YD8OYGkAwK0Tf6ucSMm8jKE_BAw7m9Q/exec";
 const HORARIOS = ["15h00","15h25","15h50","16h15","16h40"];
-
-const CONFIG = {
-  endpoint: "https://script.google.com/macros/s/AKfycbzBF1DpfNUVcjSD4nLICtPhRDmQ_9Sr5eCNYc7YD8OYGkAwK0Tf6ucSMm8jKE_BAw7m9Q/exec",
-  categorias: {
-    programas: {
-      nome: "Programas",
-      equipes: ["As Naras","Diet Assistance","RVA (Remaking Vintage Archives)","Vertex","VIV\u00caNCIAS"],
-      avaliadores: []
-    },
-    medio: {
-      nome: "Ensino M\u00e9dio T\u00e9cnico",
-      equipes: ["Defined SOS","Koda","Oryon","Projeto Neurocare","Tr\u00eas ao quadrado"],
-      avaliadores: []
-    },
-    tecnicos: {
-      nome: "Cursos T\u00e9cnicos",
-      equipes: ["Guarda-Roupa Essencialista","Habitu","Iris Prime","Nogueira, Sousa & Takenaka","O que \u00e9 que h\u00e1 velhinho?"],
-      avaliadores: []
-    },
-    graduacao: {
-      nome: "Gradua\u00e7\u00e3o",
-      equipes: ["Anthief","D\u00eaga","ImigraMEI","PetGo","Vibe Inclusiva"],
-      avaliadores: []
-    },
-    pos: {
-      nome: "P\u00f3s-gradua\u00e7\u00e3o",
-      equipes: ["Acayu","Entorno","MakePossible","TCHAM!","Troca A\u00ed"],
-      avaliadores: []
-    }
-  }
+const CATEGORIAS = {
+  programas: { nome:"Programas", equipes:["As Naras","Diet Assistance","RVA (Remaking Vintage Archives)","Vertex","VIVÊNCIAS"] },
+  medio:     { nome:"Ensino Médio Técnico", equipes:["Defined SOS","Koda","Oryon","Projeto Neurocare","Três ao quadrado"] },
+  tecnicos:  { nome:"Cursos Técnicos", equipes:["Guarda-Roupa Essencialista","Habitu","Iris Prime","Nogueira, Sousa & Takenaka","O que é que há velhinho?"] },
+  graduacao: { nome:"Graduação", equipes:["Anthief","Dêga","ImigraMEI","PetGo","Vibe Inclusiva"] },
+  pos:       { nome:"Pós-graduação", equipes:["Acayu","Entorno","MakePossible","TCHAM!","Troca Aí"] }
 };
-
 const CRITERIOS = [
   { id:"c1", peso:20, titulo:"Consistência do Modelo de Negócio",
     desc:"O negócio demonstra coerência entre o problema identificado, a solução proposta, sua proposta de valor e o modelo de monetização." },
@@ -149,338 +119,304 @@ const CRITERIOS = [
   { id:"c6", peso:20, titulo:"Clareza e Segurança na Comunicação",
     desc:"A equipe apresentou a ideia de negócio com clareza, segurança e poder de síntese, conseguindo “vendê-la” de forma convincente dentro do tempo. Recursos visuais, protótipos ou demonstrações contam na medida em que facilitam a compreensão." }
 ];
-
-/* ---------- estado ---------- */
-const qs = new URLSearchParams(location.search);
-const catKey = qs.get("cat");
-let CAT = CONFIG.categorias[catKey] || null;
-let step = 0;                       // 0 = identificação, 1..6 = critérios, 7 = revisão, 8 = fim
-let avaliador = "";
-let notas = {};                     // notas[critId][indiceEquipe] = 0..5
-let obs = {};                       // obs[indiceEquipe] = texto
-let enviado = false;
-
-const LSKEY = () => "emp19:" + catKey + ":" + avaliador;
-
-function salvar(){
-  if(!avaliador) return;
-  try{ localStorage.setItem(LSKEY(), JSON.stringify({notas,obs,step,ts:Date.now()})); }catch(e){}
-}
-function restaurar(){
-  try{
-    const r = localStorage.getItem(LSKEY());
-    if(!r) return false;
-    const d = JSON.parse(r);
-    notas = d.notas || {}; obs = d.obs || {};
-    return true;
-  }catch(e){ return false; }
-}
-
-/* ---------- cálculo ---------- */
 const PESO_TOT = CRITERIOS.reduce((s,c)=>s+c.peso,0);
-function totalEquipe(i){
+const N_CRIT = CRITERIOS.length;
+
+/* ========================= estado ========================= */
+const catKey = new URLSearchParams(location.search).get("cat");
+let CAT = CATEGORIAS[catKey] || null;
+const N_EQ = CAT ? CAT.equipes.length : 0;
+let step = 0;               // 0 ident | 1..N_EQ equipes | N_EQ+1 revisão | N_EQ+2 fim
+let avaliador = "";
+let notas = {};             // notas[iEquipe][critId] = 0..5
+let estado = {};            // estado[iEquipe] = 'pend'|'salvando'|'salvo'|'erro'
+let salvoEm = {};           // estado[iEquipe] -> hora
+let concluido = false;
+let storageOK = testaStorage();
+
+function testaStorage(){
+  try{ localStorage.setItem("__t","1"); localStorage.removeItem("__t"); return true; }
+  catch(e){ return false; }
+}
+function chaveNome(n){ return n.trim().replace(/\s+/g," "); }
+const LS = ()=> "emp19v2:"+catKey+":"+chaveNome(avaliador).toUpperCase();
+function salvaLocal(){
+  if(!storageOK || !avaliador) return;
+  try{ localStorage.setItem(LS(), JSON.stringify({notas,estado,salvoEm,concluido})); }catch(e){}
+}
+function carregaLocal(){
+  if(!storageOK) return;
+  try{
+    const r = localStorage.getItem(LS()); if(!r) return;
+    const d = JSON.parse(r);
+    notas = d.notas||{}; estado = d.estado||{}; salvoEm = d.salvoEm||{}; concluido = !!d.concluido;
+  }catch(e){}
+}
+
+/* ========================= cálculo ========================= */
+function nota(i,cid){ const e=notas[i]; const v=e?e[cid]:undefined; return (v===undefined||v===null)?undefined:v; }
+function media(i){
   let soma=0, completo=true;
-  for(const c of CRITERIOS){
-    const v = notas[c.id] && notas[c.id][i];
-    if(v===undefined || v===null){ completo=false; continue; }
-    soma += v * c.peso;
-  }
-  return { media: soma/PESO_TOT, completo };
+  for(const c of CRITERIOS){ const v=nota(i,c.id); if(v===undefined){completo=false;continue;} soma+=v*c.peso; }
+  return { valor:soma/PESO_TOT, completo };
 }
-function faltantes(){
-  let n=0;
-  for(const c of CRITERIOS) for(let i=0;i<CAT.equipes.length;i++)
-    if(!(notas[c.id] && notas[c.id][i]!==undefined && notas[c.id][i]!==null)) n++;
-  return n;
-}
+function preenchidasEquipe(i){ return CRITERIOS.filter(c=>nota(i,c.id)!==undefined).length; }
+function faltamTotal(){ let n=0; for(let i=0;i<N_EQ;i++) n += N_CRIT - preenchidasEquipe(i); return n; }
 function valoresUsados(){
   const s=new Set();
-  for(const c of CRITERIOS) for(let i=0;i<CAT.equipes.length;i++){
-    const v = notas[c.id] && notas[c.id][i];
-    if(v!==undefined && v!==null) s.add(v);
-  }
-  return s;
+  for(let i=0;i<N_EQ;i++) for(const c of CRITERIOS){ const v=nota(i,c.id); if(v!==undefined) s.add(v); }
+  return [...s].sort((a,b)=>a-b);
 }
+function pendentes(){ let n=0; for(let i=0;i<N_EQ;i++) if(preenchidasEquipe(i)>0 && estado[i]!=="salvo") n++; return n; }
 
-/* ---------- render ---------- */
-const app = document.getElementById("app");
-const elBack = document.getElementById("back");
-const elNext = document.getElementById("next");
-const elProg = document.getElementById("prog");
-const esc = s => String(s).replace(/[&<>"]/g, m=>({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;" }[m]));
+/* ========================= envio (via única) ========================= */
+function payload(i,final){
+  const o = { categoria:CAT.nome, categoriaId:catKey, avaliador:chaveNome(avaliador),
+              ordem:i+1, horario:HORARIOS[i]||"", equipe:CAT.equipes[i], final: !!final };
+  CRITERIOS.forEach(c=>{ const v=nota(i,c.id); o[c.id] = (v===undefined ? "" : v); });
+  const m = media(i); o.mediaPonderada = m.completo ? +m.valor.toFixed(4) : "";
+  o.completo = m.completo;
+  return o;
+}
+async function enviaEquipe(i,final){
+  if(preenchidasEquipe(i)===0) return true;
+  estado[i]="salvando"; salvaLocal(); pintaSalvamento();
+  const corpo = JSON.stringify(payload(i,final));
+  let ok=false;
+  try{
+    const r = await fetch(ENDPOINT,{method:"POST",redirect:"follow",
+      headers:{"Content-Type":"text/plain;charset=utf-8"},body:corpo});
+    ok = r.ok;
+  }catch(e){
+    try{
+      await fetch(ENDPOINT,{method:"POST",mode:"no-cors",
+        headers:{"Content-Type":"text/plain;charset=utf-8"},body:corpo});
+      ok = true;
+    }catch(e2){ ok=false; }
+  }
+  estado[i] = ok ? "salvo" : "erro";
+  if(ok) salvoEm[i] = new Date().toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"});
+  salvaLocal(); pintaSalvamento();
+  return ok;
+}
+async function enviaPendentes(final){
+  let todas=true;
+  for(let i=0;i<N_EQ;i++) if(preenchidasEquipe(i)>0 && estado[i]!=="salvo"){
+    const ok = await enviaEquipe(i,final); if(!ok) todas=false;
+  }
+  return todas;
+}
+window.addEventListener("online", ()=>{ if(pendentes()>0) enviaPendentes(false); });
+window.addEventListener("beforeunload", e=>{
+  if(!concluido && (pendentes()>0 || (!storageOK && faltamTotal()<N_EQ*N_CRIT))){
+    e.preventDefault(); e.returnValue=""; return "";
+  }
+});
+
+/* ========================= render ========================= */
+const app=document.getElementById("app"), elBack=document.getElementById("back"),
+      elNext=document.getElementById("next"), elProg=document.getElementById("prog");
+const esc = s => String(s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[m]));
 
 function render(){
-  if(!CAT){ renderSemCategoria(); return; }
-  document.getElementById("hdr-sub").textContent =
-    "Categoria " + CAT.nome + (avaliador ? " · " + avaliador : "");
-  if(step===0) renderIdent();
-  else if(step>=1 && step<=CRITERIOS.length) renderCriterio(CRITERIOS[step-1]);
-  else if(step===CRITERIOS.length+1) renderRevisao();
-  else renderFim();
+  if(!CAT){ telaCategoria(); return; }
+  document.getElementById("sub").textContent =
+    "Categoria "+CAT.nome+(avaliador? " · "+chaveNome(avaliador) : "");
+  if(step===0) telaIdent();
+  else if(step>=1 && step<=N_EQ) telaEquipe(step-1);
+  else if(step===N_EQ+1) telaRevisao();
+  else telaFim();
   window.scrollTo(0,0);
 }
 
-function renderSemCategoria(){
-  const opts = Object.keys(CONFIG.categorias).map(k=>
-    '<option value="'+esc(k)+'">'+esc(CONFIG.categorias[k].nome)+'</option>').join("");
-  app.innerHTML = '<div class="card"><h2>Selecione a categoria</h2>'
-    + '<p class="lede">Normalmente a categoria j\u00e1 vem no link enviado pela Comiss\u00e3o Organizadora. '
-    + 'Se voc\u00ea chegou por aqui, escolha a sua banca.</p>'
-    + '<label for="catsel">Categoria</label>'
-    + '<select id="catsel"><option value="">Selecione\u2026</option>'+opts+'</select></div>';
-  const sel = document.getElementById("catsel");
-  elBack.style.visibility="hidden"; elNext.style.visibility="visible";
-  elNext.textContent="Continuar"; elNext.disabled=true; elProg.textContent="Categoria";
-  sel.onchange = ()=>{ elNext.disabled = !sel.value; };
-  elNext.onclick = ()=>{
-    if(!sel.value) return;
-    location.search = "?cat=" + encodeURIComponent(sel.value);
+function telaCategoria(){
+  app.innerHTML='<div class="card"><h2>Selecione a categoria</h2>'
+    +'<p class="lede">Normalmente a categoria já vem no link enviado pela Comissão Organizadora.</p>'
+    +'<label for="cs">Categoria</label><select id="cs"><option value="">Selecione…</option>'
+    +Object.keys(CATEGORIAS).map(k=>'<option value="'+k+'">'+esc(CATEGORIAS[k].nome)+'</option>').join("")
+    +'</select></div>';
+  const cs=document.getElementById("cs");
+  elBack.style.visibility="hidden"; elNext.textContent="Continuar"; elNext.disabled=true;
+  elProg.textContent="Categoria";
+  cs.onchange=()=>{ elNext.disabled=!cs.value; };
+  elNext.onclick=()=>{ if(cs.value) location.search="?cat="+encodeURIComponent(cs.value); };
+}
+
+function telaIdent(){
+  app.innerHTML='<div class="card"><h2>Categoria '+esc(CAT.nome)+'</h2>'
+    +'<p class="lede">'+N_EQ+' equipes · 6 critérios por equipe · escala de 0 a 5</p>'
+    +'<label for="nm">Seu nome</label>'
+    +'<input type="text" id="nm" autocomplete="name" placeholder="Nome e sobrenome" value="'+esc(avaliador)+'">'
+    +'<p class="hint">O nome identifica suas notas e não poderá ser alterado depois que você começar.</p>'
+    +'<div class="note warn"><strong>Como a escala funciona.</strong> 0 significa ausência de informação — '
+    +'a equipe não forneceu elementos para avaliar o item, nem na apresentação nem nas respostas. '
+    +'De 1 a 5, a nota expressa o grau de concordância com a afirmação do critério: 1 discordância total, 5 concordância total.</div>'
+    +'<p class="hint">Você avalia uma equipe por vez, na ordem de apresentação, com os 6 critérios na mesma tela. '
+    +'Cada equipe é registrada ao avançar. No fim das '+N_EQ+', você vê o quadro completo e pode corrigir o que quiser.</p>'
+    +(storageOK ? ''
+      : '<div class="note err"><strong>Atenção: mantenha esta aba aberta.</strong> '
+       +'Este navegador não permite guardar dados no aparelho, então as notas não serão recuperadas se a aba for fechada. '
+       +'As equipes já registradas ficam em segurança com a Comissão Organizadora.</div>')
+    +'</div>';
+  const nm=document.getElementById("nm");
+  nm.oninput=()=>{ elNext.disabled = chaveNome(nm.value).length < 3; };
+  elBack.style.visibility="hidden"; elNext.textContent="Começar";
+  elNext.disabled = chaveNome(nm.value).length < 3;
+  elProg.textContent="Identificação";
+  elNext.onclick=()=>{
+    const n=chaveNome(nm.value); if(n.length<3) return;
+    avaliador=n; carregaLocal(); step=1; salvaLocal(); render();
   };
 }
 
-function renderIdent(){
-  const temLista = CAT.avaliadores && CAT.avaliadores.length > 0;
-  const campo = temLista
-    ? '<select id="av"><option value="">Selecione\u2026</option>'
-      + CAT.avaliadores.map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join("")
-      + '<option value="__outro">Outro (digitar)</option></select>'
-      + '<div id="outro-wrap" style="display:none"><label for="outro">Digite seu nome completo</label>'
-      + '<input type="text" id="outro" autocomplete="name"></div>'
-    : '<input type="text" id="outro" autocomplete="name" placeholder="Nome e sobrenome">';
-
-  app.innerHTML = '<div class="card">'
-    + '<h2>Categoria ' + esc(CAT.nome) + '</h2>'
-    + '<p class="lede">' + CAT.equipes.length + ' equipes finalistas \u00b7 6 crit\u00e9rios \u00b7 escala de 0 a 5</p>'
-    + '<label for="' + (temLista?'av':'outro') + '">Seu nome</label>' + campo
-    + '<div class="note warn"><strong>Como a escala funciona.</strong> 0 significa aus\u00eancia de informa\u00e7\u00e3o \u2014 '
-    + 'a equipe n\u00e3o forneceu elementos para avaliar o item, nem na apresenta\u00e7\u00e3o nem nas respostas. '
-    + 'De 1 a 5, a nota expressa o grau de concord\u00e2ncia com a afirma\u00e7\u00e3o do crit\u00e9rio: 1 discord\u00e2ncia total, 5 concord\u00e2ncia total.</div>'
-    + '<p class="hint">Avalie um crit\u00e9rio por vez, comparando as ' + CAT.equipes.length
-    + ' equipes entre si. Ao final voc\u00ea revisa o quadro completo antes de enviar. '
-    + 'Suas notas ficam salvas neste aparelho enquanto voc\u00ea preenche.</p></div>';
-
-  if(temLista){
-    const sel = document.getElementById("av");
-    const wrap = document.getElementById("outro-wrap");
-    sel.onchange = ()=>{ wrap.style.display = sel.value==="__outro" ? "block" : "none"; atualizaBarra(); };
-    const t = document.getElementById("outro"); if(t) t.oninput = atualizaBarra;
-  } else {
-    document.getElementById("outro").oninput = atualizaBarra;
-  }
-  elBack.style.visibility="hidden"; elNext.style.visibility="visible";
-  elNext.textContent="Come\u00e7ar"; elProg.textContent="Identifica\u00e7\u00e3o";
-  atualizaBarra();
-}
-
-function nomeEscolhido(){
-  const sel = document.getElementById("av");
-  const txt = document.getElementById("outro");
-  if(sel && sel.value && sel.value!=="__outro") return sel.value;
-  return txt ? txt.value.trim() : "";
-}
-
-function renderCriterio(c){
-  const linhas = CAT.equipes.map((nome,i)=>{
-    const atual = (notas[c.id]||{})[i];
-    const btns = [0,1,2,3,4,5].map(v=>
-      '<button type="button" class="'+(v===0?'zero':'')+'" data-c="'+c.id+'" data-i="'+i+'" data-v="'+v+'"'
-      + ' aria-pressed="'+(atual===v?'true':'false')+'">'+v+'</button>').join("");
-    return '<div class="team"><div class="team-head"><span class="ord">'+(i+1)+'</span>'
-      + '<span class="team-name">'+esc(nome)
-      + (HORARIOS[i] ? ' <span style="font-weight:400;color:var(--mut);font-size:.85rem">\u00b7 '+HORARIOS[i]+'</span>' : '')
-      + '</span></div>'
-      + '<div class="scale">'+btns+'</div></div>';
+function telaEquipe(i){
+  const blocos = CRITERIOS.map((c,k)=>{
+    const atual = nota(i,c.id);
+    const btns=[0,1,2,3,4,5].map(v=>'<button type="button" class="'+(v===0?'zero':'')
+      +'" data-c="'+c.id+'" data-v="'+v+'" aria-pressed="'+(atual===v?'true':'false')+'">'+v+'</button>').join("");
+    return '<div class="crit"><div class="crit-top"><span class="crit-num">'+(k+1)+'</span>'
+      +'<span class="crit-t">'+esc(c.titulo)+' <span class="crit-w">('+c.peso+'%)</span></span></div>'
+      +'<p class="crit-d">'+esc(c.desc)+'</p><div class="scale">'+btns+'</div>'
+      +'<div class="legend"><span>0 = sem informação</span><span>1 discordo · 5 concordo</span></div></div>';
   }).join("");
 
-  app.innerHTML = '<div class="card">'
-    + '<div class="crit-kicker">Critério '+step+' de '+CRITERIOS.length+' · peso '+c.peso+'%</div>'
-    + '<div class="crit-title">'+esc(c.titulo)+'</div>'
-    + '<p class="crit-desc">'+esc(c.desc)+'</p>'
-    + '</div><div class="card">'
-    + '<p class="lede" style="margin-bottom:.2rem">Compare as '+CAT.equipes.length
-    + ' equipes neste critério antes de seguir.</p>'
-    + '<div class="scale-legend" style="margin:0 0 .5rem"><span>0 = sem informação</span><span>1 = discordo · 5 = concordo</span></div>'
-    + linhas + '</div>';
+  app.innerHTML='<div class="team-banner"><div class="k">Equipe '+(i+1)+' de '+N_EQ+'</div>'
+    +'<div class="n">'+esc(CAT.equipes[i])+'</div>'
+    +'<div class="h">Apresentação '+(HORARIOS[i]||"")+'</div></div>'
+    +'<div class="card">'+blocos+'<div class="sv go" id="sv"></div></div>';
 
   app.querySelectorAll(".scale button").forEach(b=>{
-    b.onclick = ()=>{
-      const cid=b.dataset.c, i=+b.dataset.i, v=+b.dataset.v;
-      notas[cid] = notas[cid] || {};
-      notas[cid][i] = (notas[cid][i]===v) ? undefined : v;
+    b.onclick=()=>{
+      const cid=b.dataset.c, v=+b.dataset.v;
+      notas[i]=notas[i]||{};
+      notas[i][cid] = (notas[i][cid]===v) ? undefined : v;
+      if(estado[i]==="salvo") estado[i]="pend";
       b.parentElement.querySelectorAll("button").forEach(x=>
-        x.setAttribute("aria-pressed", (+x.dataset.v===notas[cid][i])?"true":"false"));
-      salvar(); atualizaBarra();
+        x.setAttribute("aria-pressed",(+x.dataset.v===notas[i][cid])?"true":"false"));
+      salvaLocal(); pintaBarra(); pintaSalvamento();
     };
   });
-  elBack.style.visibility="visible"; elNext.style.visibility="visible";
-  elNext.textContent = step===CRITERIOS.length ? "Revisar" : "Avançar";
-  atualizaBarra();
+  elBack.style.visibility="visible";
+  elNext.textContent = (i===N_EQ-1) ? "Salvar e revisar" : "Salvar e avançar";
+  elNext.disabled=false;
+  elNext.onclick=async ()=>{
+    elNext.disabled=true; elNext.textContent="Salvando…";
+    await enviaEquipe(i,false);
+    step++; render();
+  };
+  pintaBarra(); pintaSalvamento();
 }
 
-function renderRevisao(){
-  const ths = CAT.equipes.map((n,i)=>'<th>'+(i+1)+'</th>').join("");
-  const rows = CRITERIOS.map(c=>{
-    const tds = CAT.equipes.map((n,i)=>{
-      const v=(notas[c.id]||{})[i];
-      return '<td>'+(v===undefined||v===null?'<span class="missing">—</span>':v)+'</td>';
-    }).join("");
-    return '<tr><td>'+esc(c.titulo)+' <span style="color:var(--mut)">('+c.peso+'%)</span></td>'+tds+'</tr>';
-  }).join("");
-  const tot = CAT.equipes.map((n,i)=>{
-    const t=totalEquipe(i);
-    return '<td>'+(t.completo? t.media.toFixed(2) : '<span class="missing">—</span>')+'</td>';
-  }).join("");
+function pintaSalvamento(){
+  const el=document.getElementById("sv"); if(!el) return;
+  const i=step-1; if(i<0||i>=N_EQ) return;
+  const e=estado[i];
+  if(e==="salvando"){ el.className="sv go"; el.textContent="Registrando…"; }
+  else if(e==="salvo"){ el.className="sv okk"; el.textContent="✓ Registrado"+(salvoEm[i]?" às "+salvoEm[i]:""); }
+  else if(e==="erro"){ el.className="sv bad"; el.textContent="⚠ Não foi possível registrar. Suas notas estão na tela; tentaremos de novo ao avançar."; }
+  else { el.className="sv go"; el.textContent="Será registrado ao avançar."; }
+}
 
-  const ordem = CAT.equipes.map((n,i)=>({n,i,...totalEquipe(i)}))
-    .filter(x=>x.completo).sort((a,b)=>b.media-a.media);
-  const rank = ordem.length
-    ? '<ol class="rank">'+ordem.map((x,k)=>'<li><span class="pos">'+(k+1)+'º</span>'
-      + '<span class="nm">'+esc(x.n)+'</span><span class="sc">'+x.media.toFixed(2)+'</span></li>').join("")+'</ol>'
+function telaRevisao(){
+  const ths=CAT.equipes.map((n,i)=>'<th>'+(i+1)+'</th>').join("");
+  const rows=CRITERIOS.map(c=>'<tr><td>'+esc(c.titulo)+' <span style="color:var(--mut)">('+c.peso+'%)</span></td>'
+    +CAT.equipes.map((n,i)=>{const v=nota(i,c.id);return '<td>'+(v===undefined?'<span class="miss">—</span>':v)+'</td>';}).join("")
+    +'</tr>').join("");
+  const tot=CAT.equipes.map((n,i)=>{const m=media(i);
+    return '<td>'+(m.completo?m.valor.toFixed(2):'<span class="miss">—</span>')+'</td>';}).join("");
+
+  const ord=CAT.equipes.map((n,i)=>({n,i,...media(i)})).filter(x=>x.completo).sort((a,b)=>b.valor-a.valor);
+  const rank = ord.length
+    ? '<ul class="rows">'+ord.map((x,k)=>'<li><span class="pos">'+(k+1)+'º</span>'
+      +'<span class="nm">'+esc(x.n)+'<small>'+(HORARIOS[x.i]||"")+'</small></span>'
+      +'<span class="sc">'+x.valor.toFixed(2)+'</span></li>').join("")+'</ul>'
     : '<p class="hint">O ranking aparece quando todas as notas estiverem preenchidas.</p>';
 
-  const falt = faltantes();
-  const usados = valoresUsados();
-  const notasAltas = [...usados].every(v=>v>=4) && usados.size>0;
+  const lista='<ul class="rows">'+CAT.equipes.map((n,i)=>{
+    const f=N_CRIT-preenchidasEquipe(i), m=media(i);
+    const st = estado[i]==="salvo" ? "✓ registrado" : (estado[i]==="erro" ? "⚠ não registrado" : "pendente");
+    return '<li><span class="pos">'+(i+1)+'</span><span class="nm">'+esc(n)
+      +'<small>'+(HORARIOS[i]||"")+' · '+(f>0?('<span class="miss">faltam '+f+'</span>'):st)+'</small></span>'
+      +'<span class="sc">'+(m.completo?m.valor.toFixed(2):'—')+'</span>'
+      +'<button class="ed" data-i="'+i+'" type="button">Editar</button></li>';}).join("")+'</ul>';
 
-  let avisos = "";
-  if(falt>0) avisos += '<div class="note warn"><strong>Faltam '+falt+' nota'+(falt>1?'s':'')
-    + '.</strong> Os campos marcados com — ainda não foram preenchidos. Volte aos critérios para completar.</div>';
-  if(falt===0 && (usados.size<3 || notasAltas)) avisos += '<div class="note warn">'
-    + '<strong>Suas notas usaram apenas '+usados.size+' valor'+(usados.size>1?'es':'')
-    + ' da escala ('+[...usados].sort().join(", ")+').</strong> Não há nada errado nisso, mas vale conferir: '
-    + 'com as '+CAT.equipes.length+' equipes concentradas na mesma faixa, a decisão da categoria passa a ser definida '
-    + 'pela nota da Semifinal, que tem peso 30%, e não por esta etapa, que tem peso 70%.</div>';
-  if(falt===0 && usados.size>=3 && !notasAltas) avisos += '<div class="note ok">'
-    + 'Quadro completo. Confira o ranking abaixo antes de enviar — depois do envio, correções só pela Comissão Organizadora.</div>';
+  const falt=faltamTotal(), usados=valoresUsados();
+  let avisos="";
+  if(falt>0) avisos+='<div class="note err"><strong>Faltam '+falt+' nota'+(falt>1?'s':'')+'.</strong> '
+    +'Use o botão Editar para completar as equipes marcadas.</div>';
+  if(falt===0 && (usados.length<3 || usados.every(v=>v>=4)))
+    avisos+='<div class="note warn"><strong>Suas notas usaram '+usados.length+' valor'
+      +(usados.length>1?'es':'')+' da escala ('+usados.join(", ")+').</strong> '
+      +'Não há nada errado nisso, mas vale conferir: com as '+N_EQ
+      +' equipes concentradas na mesma faixa, a decisão da categoria passa a ser definida pela nota da Semifinal, '
+      +'que tem peso 30%, e não por esta etapa, que tem peso 70%.</div>';
+  if(falt===0) avisos+='<div class="note ok">Quadro completo. Confira o ranking e conclua — '
+    +'o que você concluir por último substitui o registro anterior.</div>';
 
-  const obsCampos = CAT.equipes.map((n,i)=>
-    '<label for="obs'+i+'">'+(i+1)+'. '+esc(n)+'</label>'
-    + '<textarea id="obs'+i+'" data-i="'+i+'" placeholder="Opcional — observações para a devolutiva à equipe">'
-    + esc(obs[i]||"") + '</textarea>').join("");
+  app.innerHTML='<div class="card"><h2>Revisão — '+esc(CAT.nome)+'</h2>'
+    +'<p class="lede">'+esc(chaveNome(avaliador))+'</p>'+avisos
+    +'<div style="overflow-x:auto;margin-top:.9rem"><table><thead><tr><th>Critério</th>'+ths+'</tr></thead>'
+    +'<tbody>'+rows+'</tbody><tfoot><tr><td>Média ponderada (0–5)</td>'+tot+'</tr></tfoot></table></div>'
+    +'<p class="hint">Colunas na ordem de apresentação.</p></div>'
+    +'<div class="card"><h2>Equipes</h2><p class="lede">Toque em Editar para rever qualquer nota.</p>'+lista+'</div>'
+    +'<div class="card"><h2>Ranking resultante</h2>'
+    +'<p class="lede">Como suas notas ordenam a categoria neste momento.</p>'+rank+'</div>';
 
-  app.innerHTML = '<div class="card"><h2>Revisão — Categoria '+esc(CAT.nome)+'</h2>'
-    + '<p class="lede">'+esc(avaliador)+'</p>' + avisos
-    + '<div class="scroll" style="margin-top:.9rem"><table><thead><tr><th>Critério</th>'+ths+'</tr></thead>'
-    + '<tbody>'+rows+'</tbody><tfoot><tr><td>Média ponderada (0–5)</td>'+tot+'</tr></tfoot></table></div>'
-    + '<p class="hint">As colunas seguem a ordem de apresentação: '
-    + CAT.equipes.map((n,i)=>(i+1)+'. '+n).join(" · ") + '</p></div>'
-    + '<div class="card"><h2>Ranking resultante</h2>'
-    + '<p class="lede">Como suas notas ordenam a categoria neste momento.</p>'+rank+'</div>'
-    + '<div class="card"><h2>Observações por equipe</h2>'
-    + '<p class="lede">Usadas na devolutiva aos participantes. Não entram no cálculo da nota.</p>'
-    + obsCampos + '</div>';
-
-  app.querySelectorAll("textarea").forEach(t=>{
-    t.oninput = ()=>{ obs[+t.dataset.i] = t.value; salvar(); };
-  });
-  elBack.style.visibility="visible"; elNext.style.visibility="visible";
-  elNext.textContent="Enviar notas"; atualizaBarra();
-}
-
-function renderFim(){
-  const linhas = CAT.equipes.map((n,i)=>{
-    const t=totalEquipe(i);
-    return (i+1)+". "+n+" — "+(t.completo?t.media.toFixed(2):"incompleto");
-  }).join("\n");
-  const texto = montaTexto();
-  app.innerHTML = '<div class="card center">'
-    + (enviado
-        ? '<div class="note ok" style="text-align:left"><strong>Notas registradas.</strong> '
-          + 'Entregue também a ficha de papel à Comissão Organizadora — ela é o documento de conferência.</div>'
-        : '<div class="note warn" style="text-align:left"><strong>Envio automático não disponível.</strong> '
-          + 'Copie o texto abaixo e envie à Comissão Organizadora pelo WhatsApp. '
-          + 'A ficha de papel permanece como registro oficial.</div>')
-    + '<div class="big">'+esc(CAT.nome)+'</div>'
-    + '<p class="lede">'+esc(avaliador)+'</p></div>'
-    + '<div class="card"><h2>Resumo</h2><pre style="white-space:pre-wrap;font-size:.82rem;'
-    + 'background:#f8f9fb;border:1px solid var(--line);border-radius:9px;padding:.75rem">'
-    + esc(texto) + '</pre>'
-    + '<button class="btn" id="copiar" type="button" style="width:100%;margin-top:.6rem">Copiar resumo</button>'
-    + '<a class="btn ghost" id="zap" style="display:block;width:100%;margin-top:.5rem;text-align:center;text-decoration:none;box-sizing:border-box" target="_blank" rel="noopener" href="https://wa.me/?text='
-    + encodeURIComponent(texto).replace(/'/g,"%27") + '">Enviar por WhatsApp</a>'
-    + '</div>';
-  document.getElementById("copiar").onclick = async ()=>{
-    try{ await navigator.clipboard.writeText(texto); document.getElementById("copiar").textContent="Copiado"; }
-    catch(e){ document.getElementById("copiar").textContent="Selecione o texto acima e copie"; }
+  app.querySelectorAll(".ed").forEach(b=>{ b.onclick=()=>{ step=(+b.dataset.i)+1; render(); }; });
+  elBack.style.visibility="visible";
+  elNext.textContent="Concluir avaliação"; elNext.disabled = falt>0;
+  elNext.onclick=async ()=>{
+    elNext.disabled=true; elNext.textContent="Enviando…";
+    for(let i=0;i<N_EQ;i++) estado[i] = (estado[i]==="salvo" ? "salvo" : estado[i]);
+    for(let i=0;i<N_EQ;i++) await enviaEquipe(i,true);
+    concluido = Object.keys(estado).every(k=>estado[k]==="salvo");
+    salvaLocal(); step++; render();
   };
-  elBack.style.visibility="hidden"; elNext.style.visibility="hidden";
-  elProg.textContent = enviado ? "Avaliação concluída" : "Pendente de envio manual";
+  elProg.textContent = falt>0 ? (falt+" nota(s) em falta") : "Pronto para concluir";
 }
 
-function montaTexto(){
-  let t = "EMPREENDA SENAC 19 - PAINEL FINAL\nCategoria: "+CAT.nome+"\nAvaliador: "+avaliador+"\n";
+function resumoTexto(){
+  let t="EMPREENDA SENAC 19 - PAINEL FINAL\nCategoria: "+CAT.nome+"\nAvaliador: "+chaveNome(avaliador)+"\n";
   CAT.equipes.forEach((n,i)=>{
-    t += "\n"+(i+1)+". "+n+(HORARIOS[i]?" ["+HORARIOS[i]+"]":"")+"\n";
-    CRITERIOS.forEach(c=>{
-      const v=(notas[c.id]||{})[i];
-      t += "  "+c.id.toUpperCase()+" ("+c.peso+"%): "+(v===undefined||v===null?"-":v)+"\n";
-    });
-    const tt=totalEquipe(i);
-    t += "  MEDIA PONDERADA: "+(tt.completo?tt.media.toFixed(2):"incompleto")+"\n";
-    if(obs[i]) t += "  OBS: "+obs[i]+"\n";
+    t+="\n"+(i+1)+". "+n+(HORARIOS[i]?" ["+HORARIOS[i]+"]":"")+"\n";
+    CRITERIOS.forEach((c,k)=>{ const v=nota(i,c.id); t+="  C"+(k+1)+" ("+c.peso+"%): "+(v===undefined?"-":v)+"\n"; });
+    const m=media(i); t+="  MEDIA: "+(m.completo?m.valor.toFixed(2):"incompleto")+"\n";
   });
   return t;
 }
 
-function atualizaBarra(){
-  if(step===0){
-    elNext.disabled = !nomeEscolhido();
-    return;
-  }
-  if(step>=1 && step<=CRITERIOS.length){
-    const c=CRITERIOS[step-1];
-    const feitas = CAT.equipes.filter((n,i)=>(notas[c.id]||{})[i]!==undefined && (notas[c.id]||{})[i]!==null).length;
-    elProg.textContent = feitas+" de "+CAT.equipes.length+" equipes · critério "+step+"/"+CRITERIOS.length;
-    elNext.disabled = false;
-  } else if(step===CRITERIOS.length+1){
-    const f=faltantes();
-    elProg.textContent = f>0 ? f+" nota(s) em falta" : "Pronto para enviar";
-    elNext.disabled = f>0;
+function telaFim(){
+  const txt=resumoTexto();
+  const falhou = Object.keys(estado).some(k=>estado[k]!=="salvo");
+  app.innerHTML='<div class="card">'
+    +(falhou
+      ? '<div class="note err"><strong>Parte das notas não foi registrada automaticamente.</strong> '
+       +'Entregue a ficha de papel à Comissão Organizadora e, se puder, envie também o resumo abaixo. '
+       +'Não feche esta aba antes disso.</div>'
+      : '<div class="note ok"><strong>Avaliação concluída e registrada.</strong> '
+       +'Entregue também a ficha de papel à Comissão Organizadora — ela é o documento de conferência.</div>')
+    +'<p class="lede" style="margin-top:.8rem">'+esc(CAT.nome)+' · '+esc(chaveNome(avaliador))+'</p></div>'
+    +'<div class="card"><h2>Resumo das suas notas</h2>'
+    +'<p class="lede">Registro adicional, opcional. Se quiser guardar ou enviar uma cópia, use os botões abaixo.</p>'
+    +'<pre style="margin-top:.7rem">'+esc(txt)+'</pre>'
+    +'<button class="btn block" id="cp" type="button">Copiar resumo</button>'
+    +'<a class="btn ghost block" target="_blank" rel="noopener" href="https://wa.me/?text='
+    + encodeURIComponent(txt).replace(/'/g,"%27")+'">Enviar por WhatsApp</a></div>';
+  const cp=document.getElementById("cp");
+  cp.onclick=async ()=>{ try{ await navigator.clipboard.writeText(txt); cp.textContent="Copiado"; }
+    catch(e){ cp.textContent="Selecione o texto acima e copie"; } };
+  elBack.style.visibility="hidden"; elNext.style.visibility="hidden";
+  elProg.textContent = falhou ? "Envie o resumo à Comissão" : "Concluída";
+}
+
+function pintaBarra(){
+  if(step>=1 && step<=N_EQ){
+    const i=step-1, f=preenchidasEquipe(i);
+    elProg.innerHTML = f+" de "+N_CRIT+" critérios<br>equipe "+step+"/"+N_EQ;
   }
 }
 
-/* ---------- envio ---------- */
-async function enviar(){
-  elNext.disabled = true; elNext.textContent = "Enviando…";
-  const payload = {
-    categoria: CAT.nome, categoriaId: catKey, avaliador: avaliador,
-    enviadoEm: new Date().toISOString(),
-    equipes: CAT.equipes.map((n,i)=>{
-      const o = { ordem:i+1, equipe:n, obs:obs[i]||"" };
-      CRITERIOS.forEach(c=>{ const v=(notas[c.id]||{})[i]; o[c.id] = (v===undefined?"":v); });
-      const t=totalEquipe(i); o.mediaPonderada = t.completo ? +t.media.toFixed(4) : "";
-      return o;
-    })
-  };
-  if(!CONFIG.endpoint){ enviado=false; step++; render(); return; }
-  try{
-    const r = await fetch(CONFIG.endpoint, {
-      method:"POST", redirect:"follow",
-      headers:{ "Content-Type":"text/plain;charset=utf-8" },
-      body: JSON.stringify(payload)
-    });
-    enviado = r.ok;
-  }catch(e){
-    try{
-      await fetch(CONFIG.endpoint, { method:"POST", mode:"no-cors",
-        headers:{ "Content-Type":"text/plain;charset=utf-8" }, body: JSON.stringify(payload) });
-      enviado = true;
-    }catch(e2){ enviado = false; }
-  }
-  step++; render();
-}
-
-/* ---------- navegação ---------- */
-elNext.onclick = ()=>{
-  if(step===0){
-    const n = nomeEscolhido();
-    if(!n) return;
-    avaliador = n; restaurar(); step=1; salvar(); render(); return;
-  }
-  if(step===CRITERIOS.length+1){ enviar(); return; }
-  step++; salvar(); render();
-};
-elBack.onclick = ()=>{ if(step>0){ step--; salvar(); render(); } };
+elBack.onclick=()=>{ if(step>0){ step--; salvaLocal(); render(); } };
 render();
 </script>
 </body>
